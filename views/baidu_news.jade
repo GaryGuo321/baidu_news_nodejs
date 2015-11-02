@@ -1,0 +1,91 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    link(rel='stylesheet', type='text/css', href='/css/baidu-news.css')
+    title 百度新闻
+  body
+    .container
+      // 头部start
+      .header
+        // 头部工具栏部分start
+        .header-toolbar
+          .toolbar-l
+            .baidu-btn.toolbar-btn
+            .user-home.toolbar-btn
+          .toolbar-r
+            .baidu-search.toolbar-btn
+            .add-something.toolbar-btn
+        // 头部工具栏部分end
+        // 头部导航栏部分start
+        .header-nav
+          .divider
+          .table-nav
+            table
+              tr
+                td(colspan='1')
+                  div
+                    b
+                    span.recomend(value='recommend') 推荐
+                td(colspan='1')
+                  div
+                    b
+                    span(value='common') 百家
+                td(colspan='1')
+                  div
+                    b
+                    span(value='localtion') 本地
+                td(colspan='1')
+                  div
+                    b
+                    span(value='picture') 图片
+                td(colspan='1')
+                  div
+                    b
+                    span(value='entertainment') 娱乐
+                td(colspan='1')
+                  div
+                    b
+                    span(value='sociology') 社会
+              tr
+                td(colspan='1')
+                  div
+                    b
+                    span(value='life') 生活
+                td(colspan='1')
+                  div
+                    b
+                    span(value='abroad') 国际
+                td(colspan='1')
+                  div
+                    b
+                    span(value='domestic') 国内
+                td(colspan='1')
+                  div
+                    b
+                    span(value='sport') 体育
+                td(colspan='1')
+                  div
+                    b
+                    span(value='cars') 汽车
+                td(colspan='1')
+                  div
+                    b
+                    span(value='finance') 财经
+        // 头部导航栏部分end
+      // 头部end
+      // 内容start
+      .content
+      // 内容end
+      // 尾部start
+      .footer
+        .footer-left
+          .item.feedback 意见反馈
+        .footer-middle
+          .item.app-recommend 应用推荐
+        .footer-right
+          .item.app-download 客户端
+      // 尾部end
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/js/baidu-news.js')

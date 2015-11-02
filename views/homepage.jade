@@ -1,0 +1,282 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', type='text/css', href='/css/homepage.css')
+    link(rel='stylesheet', type='text/css', href='/dist/remodal.css')
+    link(rel='stylesheet', type='text/css', href='/dist/remodal-default-theme.css')
+    link(rel='stylesheet', type='text/css', href='/bootstrap/css/bootstrap.min.css')
+    title 信息管理系统界面
+  body
+    #container
+      // 头部
+      .header
+        // 左边logo
+        .logo
+          img(src='/image/system-logo.png', alt='system-logo')
+          p.title-word 信息管理系统界面
+          // <p><small>INFORMATION MANRGEMENT SYSTEM GUI</small></p>
+          img.english(src='/image/EN.png', alt='english')
+        // 导航栏部分
+        .nav1
+          ul.inline.inline-nav
+            li
+              a(href='')
+                i.icon-book.icon-white
+                |  工作台
+            li
+              a(href='')
+                i.icon-star-empty.icon-white
+                |  模型管理
+            li
+              a(href='')
+                i.icon-pencil.icon-white
+                |  模块设计
+            li
+              a(href='')
+                i.icon-wrench.icon-white
+                |  常用工具
+            li
+              a(href='')
+                i.icon-file.icon-white
+                |  文件管理
+            li
+              a(href='')
+                i.icon-asterisk.icon-white
+                |  系统设置
+        // 右边用户信息
+        .user
+          .top
+            ul.inline.inline-right
+              li
+                a.help(href='#')
+                  i.icon-question-sign.icon-white
+                  |  帮助
+              li
+                a(href='#') 关于
+              li
+                a(href='/login') 退出
+          .bottom
+            a(href='#')
+              span
+                i.icon-user.icon-white
+                |  admin
+            a(href='#')
+              span 消息
+            span 5
+      // 中间内容部分
+      .main
+        // 位置基本信息
+        .guide
+          .mail-list
+            span 新闻类别
+          .position
+            p
+              | 位置：
+              a(href='#') 首页
+        // 主题内容部分
+        .content
+          // 主题内容右边内容部分
+          .content-right
+            p.welcome 欢迎登录新闻信息管理系统
+            // 往数据库插入数据start
+            form.form-inline.form.form-one(method='post', action='')
+              .controls.input-prepend
+                span.add-on 新闻类别：
+                input.sort-content(type='text', name='news-sort', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻标题：
+                input.news-title(type='text', name='news-title')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻图片：
+                textarea.news-picture(name='news-image')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻内容：
+                textarea.news-content(name='news-content')
+              br
+              .controls.input-prepend
+                span.add-on 新闻来源：
+                input.news-source(type='text', name='news-source')
+              br
+              input.btn.normal.insert-message(type='submit', name='insert', value='insert')
+              // <input type="submit" class="btn normal" name="delete" value="delete">
+              //
+                <button class="btn" type="button"><i class="icon-search"></i> 修改</button>
+                <button class="btn" type="button"><i class=" icon-share"></i> 查询</button>
+            form.form-inline.form.form-two(method='post', action='')
+              .controls.input-prepend
+                span.add-on 新闻类别：
+                input.sort-content(type='text', name='news-sort', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻标题：
+                input.news-title(type='text', name='news-title')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻图片：
+                textarea.news-picture(name='news-image')
+              br
+              input.btn.special.insert-message-picture(type='submit', name='insert', value='insert')
+              // <input type="submit" class="btn special" name="delete" value="delete">
+              //
+                <button class="btn" type="button"><i class="icon-search"></i> 修改</button>
+                <button class="btn" type="button"><i class=" icon-share"></i> 查询</button>
+            // 往数据库插入数据end
+            // 从数据库读取数据start
+            .table-content
+              .button-sort
+                a.btn(href='', value='insert') 导入
+                a.btn(href='', value='delete') 删除
+                // <a href="" class="btn">修改</a>
+              table.table
+                thead
+                  tr
+                    th(width='60px') news-id
+                    th(width='80px') news-title
+                    th.long-url img-source
+                    th news-content
+                    th(width='80px') add-times
+                    th(width='90px') news-source
+                    th(width='60px') modify
+                tbody
+            .table-picture-content
+              .button-sort
+                a.btn(href='', value='insert') 导入
+                a.btn(href='', value='delete') 删除
+                // <a href="" class="btn">修改</a>
+              table.table
+                thead
+                  tr
+                    th news-id
+                    th news-title
+                    th.long-picture-url img-source
+                    th modify
+                tbody
+            // 从数据库读取数据end
+            // 从数据库中删除数据start
+            form.form-inline.form.form-three
+              .controls.input-prepend
+                span.add-on 新闻类别：
+                input.sort-content(type='text', name='news-sort', readonly='')
+              br
+              //
+                <div class="controls input-prepend">
+                <span class="add-on">新闻 ID：</span>
+                <input type="text" name="news-id">
+                </div>
+                <br/>
+              .delete-content
+                table.table
+                  thead
+                    tr
+                      th(width='50px') select
+                      th(width='60px') news-id
+                      th news-title
+                      th.long-url img-source
+                      th news-content
+                      th(width='80px') add-times
+                      th(width='90px') news-source
+                  tbody
+              .delete-picture-content
+                table.table
+                  thead
+                    tr
+                      th select
+                      th news-id
+                      th news-title
+                      th.long-picture-url img-source
+                  tbody
+              a.select-all(href='') 全选
+              a.select-none(href='') 全不选
+              a.select-back(href='') 反选
+              br
+              input#delete-message.btn.special(type='submit', name='delete', value='delete')
+            // 从数据库中删除数据end
+            // 更新数据库中数据start
+            form.form-inline.form.form-four(method='post', action='')
+              .controls.input-prepend
+                span.add-on 新闻类别：
+                input.sort-content(type='text', name='news-sort', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻 ID：
+                input.news-id(type='text', name='news-id', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻标题：
+                input.news-title(type='text', name='news-title')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻图片：
+                textarea.news-picture(name='news-image')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻内容：
+                textarea.news-content(name='news-content')
+              br
+              .controls.input-prepend
+                span.add-on 新闻来源：
+                input.news-source(type='text', name='news-source')
+              br
+              input.btn.normal.update-message(type='submit', name='update', value='update')
+            form.form-inline.form.form-five(method='post', action='')
+              .controls.input-prepend
+                span.add-on 新闻类别：
+                input.sort-content(type='text', name='news-sort', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻 ID：
+                input.news-id(type='text', name='news-id', readonly='')
+              br
+              .controls.input-prepend
+                span.add-on 新闻标题：
+                input.news-title(type='text', name='news-title')
+              br
+              .controls.input-prepend
+                span.add-on.more-content 新闻图片：
+                textarea.news-picture(name='news-image')
+              br
+              input.btn.special.update-message-picture(type='submit', name='update', value='update')
+            // 更新数据库中数据end
+          // 主题内容部分左边导航栏
+          .nav-left
+            ul.nav2
+              li.nav2-1
+                a(href='', value='recommend')
+                  span
+                    img(src='/image/leftico01.png')
+                  | 推荐
+              li.nav2-1
+                a(href='', value='common')
+                  span
+                    img(src='/image/leftico02.png')
+                  | 百家
+              li.nav2-1
+                a(href='', value='localtion')
+                  span
+                    img(src='/image/leftico03.png')
+                  | 本地
+              li.nav2-1
+                a(href='', value='picture')
+                  span
+                    img(src='/image/leftico04.png')
+                  | 图片
+              li.nav2-1
+                a(href='', value='entertainment')
+                  span
+                    img(src='/image/leftico02.png')
+                  | 娱乐
+              li.nav2-1
+                a(href='', value='sociology')
+                  span
+                    img(src='/image/leftico04.png')
+                  | 社会
+      // 尾部
+      .footer
+        | ©版权所有 2015
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/dist/remodal.min.js')
+    script(type='text/javascript', src='/js/homepage.js')
