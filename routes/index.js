@@ -18,7 +18,7 @@ router.get('/homepage', function(req, res, next) {
 });
 //ajax显示百度新闻内容和homepage显示表格内容
 router.get('/database', function(req, res, next) {
-	orm.connect("mysql://root:@127.0.0.1/baidu_news", function(err, db) {
+	orm.connect("mysql://root:123456@127.0.0.1/baidu_news", function(err, db) {
 		if (err) throw err;
 		// 定义数据模型(操作的数据表名为news)
 		var news = db.define("news", {
@@ -44,7 +44,7 @@ router.get('/database', function(req, res, next) {
 });
 //点击更新时默认数据显示
 router.post('/updateDate', function(req, res, next) {
-	orm.connect("mysql://root:@127.0.0.1/baidu_news", function(err, db) {
+	orm.connect("mysql://root:123456@127.0.0.1/baidu_news", function(err, db) {
 		if (err) throw err;
 		// 定义数据模型(操作的数据表名为news)
 		var news = db.define("news", {
@@ -70,7 +70,7 @@ router.post('/updateDate', function(req, res, next) {
 });
 //ajax验证登录信息
 router.post('/login_message', function(req, res, next) {
-	orm.connect("mysql://root:@127.0.0.1/baidu_news", function(err, db) {
+	orm.connect("mysql://root:123456@127.0.0.1/baidu_news", function(err, db) {
 		if (err) throw err;
 		// 定义数据模型(操作的数据表名为user_message)
 		var user_message = db.define("user_message", {
@@ -100,7 +100,7 @@ router.post('/login_message', function(req, res, next) {
 });
 //ajax 数据库数据增删改
 router.post('/changeData', function(req, res, next) {
-	orm.connect("mysql://root:@127.0.0.1/baidu_news", function(err, db) {
+	orm.connect("mysql://root:123456@127.0.0.1/baidu_news", function(err, db) {
 		if (err) throw err;
 		// 定义数据模型(操作的数据表名为news)
 		var news = db.define("news", {
@@ -205,7 +205,7 @@ router.post('/changeData', function(req, res, next) {
 				}).remove(function(err) {
 					if (err) throw err;
 					if (delete_count == arr_length) res.send("删除数据成功！");
-					else delete_count++;  //防止重复发送
+					else delete_count++; //防止重复发送
 					// if(t == arr_length) res.send("删除数据成功！");
 					// 不能这么写，闭包的问题，t永远会等于arr_length
 				})

@@ -4,69 +4,70 @@ html
     meta(charset='UTF-8')
     link(rel='stylesheet', type='text/css', href='./bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='./css/login.css')
-    title #{title}
+    title
   body
     // 头部
-    .header
-      .circle
-        span.circle-content
-      p 欢迎登陆后台管理界面平台
-      ul.inline
-        li
-          a(href='#')
-            li.icon-home.icon-white
-            | 回首页
-        li
-          a(href='#')
-            li.icon-question-sign.icon-white
-            | 帮助
-        li
-          a(href='#')
-            li.icon-file.icon-white
-            | 关于
-    // 用户登录部分
-    .main
-      .title
-        img(src='./image/system-logo.png', alt='system-logo')
-        p.title-word 信息管理系统界面
-        // <p><small>INFORMATION MANRGEMENT SYSTEM GUI</small></p>
-        img.english(src='./image/EN.png', alt='english')
-      .login
-        .left
-          span
-          img(src='./image/login-picture.png', alt='login-picture')
-        .right
-          p.people-login
-            | 用户登陆
-            small UserLogin
-          form.form-horizontal
-            .control-group
-              .controls.input-prepend
-                span.add-on
-                  i.icon-user
-                  |  用户
-                input#input-user(type='text', name='user_name', placeholder='请输入用户名', autofocus='')
-              span.name-error
-            .control-group
-              .controls.input-prepend
-                span.add-on
-                  i.icon-lock
-                  |  密码
-                input#input-Password(type='password', name='user_password', placeholder='请输入密码')
-              span.password-error
-            .control-group
-              .controls
-                label.checkbox
-                  input(type='checkbox')
-                  | 记住账号
-                a.password-forget(href='#') 忘记密码？
-                // <button type="submit" class="btn">登 录</button>
-                // <input type="submit" name="tijiao" value="提交" class="btn">
-                a.btn.btn-small.bottom(href='#')
-                  i.icon-star
-                  |  登 录
-    // 尾部
-    .footer
-      p ©版权所有  2015
+    .container-fluid
+      .header
+        .circle
+          span.circle-content
+        p 欢迎登陆后台管理界面平台
+        ul.inline
+          li
+            a(href='#')
+              li.icon-home.icon-white
+              | 回首页
+          li
+            a(href='#')
+              li.icon-question-sign.icon-white
+              | 帮助
+          li
+            a(href='#')
+              li.icon-file.icon-white
+              | 关于
+      // 用户登录部分
+      .main
+        .title
+          img(src='./image/system-logo.png', alt='system-logo')
+          p.title-word 信息管理系统界面
+          // <p><small>INFORMATION MANRGEMENT SYSTEM GUI</small></p>
+          img.english(src='./image/EN.png', alt='english')
+        .login
+          .left
+            span
+            img(src='./image/login-picture.png', alt='login-picture')
+          .right
+            p.people-login
+              | 用户登陆
+              small UserLogin
+            form.form-horizontal
+              .control-group
+                .controls.input-prepend
+                  span.add-on
+                    i.icon-user
+                    |  用户
+                  input#input-user(type='text', name='user_name', placeholder='请输入用户名', autofocus='')
+                span.name-error
+              .control-group
+                .controls.input-prepend
+                  span.add-on
+                    i.icon-lock
+                    |  密码
+                  input#input-Password(type='password', name='user_password', placeholder='请输入密码')
+                span.password-error
+              .control-group
+                .controls
+                  label.checkbox
+                    input(type='checkbox')
+                    | 记住账号
+                  a.password-forget(href='#') 忘记密码？
+                  // <button type="submit" class="btn">登 录</button>
+                  // <input type="submit" name="tijiao" value="提交" class="btn">
+                  a.btn.btn-small.bottom(href='#')
+                    i.icon-star
+                    |  登 录
+      // 尾部
+      .footer
+        p ©版权所有 2015
     script(type='text/javascript', src='./js/jquery.min.js')
     script(type='text/javascript', src='./js/login.js')
