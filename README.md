@@ -1,5 +1,7 @@
 # baidu_news_nodejs
 
+百度新闻移动web端页面，使用node.js和express进行数据和路由的操作。有后台信息管理系统<br>
+
 使用了express<br>
 3个页面<br>
 login.jade登陆页<br>
